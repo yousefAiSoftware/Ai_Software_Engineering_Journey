@@ -1,0 +1,13 @@
+# Core dev tools
+black==24.4.2
+ruff==0.5.5
+pytest==8.2.0
+
+# Jupyter
+jupyter==1.0.0
+ipykernel==6.29.5
+
+# Data/plots (for later weeks)
+numpy==2.0.1
+pandas==2.2.2
+matplotlib==3.9.0
