@@ -1,0 +1,4 @@
+NUM;NAME; IS COMPLETED?
+;;
+1;Check if app works correctly;TRUE
+2;Try To push app to github;FALSE

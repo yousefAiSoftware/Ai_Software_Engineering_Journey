@@ -1,0 +1,14 @@
+[
+    {
+        "name": "try",
+        "completed": false
+    },
+    {
+        "name": "Check Delete Correctly",
+        "completed": false
+    },
+    {
+        "name": "Tell Gemini that we finished",
+        "completed": false
+    }
+]
