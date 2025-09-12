@@ -1,10 +1,10 @@
 [
     {
-        "name": "Try To push app to github",
-        "completed": true
+        "name": "Add Edit Contact to contacts App Feature (V1.1)",
+        "completed": false
     },
     {
-        "name": "See a new step",
+        "name": "Convert App to .exe file (Exported Version) (v1.1)",
         "completed": false
     }
 ]

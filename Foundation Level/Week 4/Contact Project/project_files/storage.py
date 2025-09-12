@@ -41,7 +41,6 @@ def ExportContacts(contacts_list):
         for i , contact in enumerate(contacts_list):
             rows.append([i+1 , contact["name"] , contact["phone"] , contact["fav"]])
         writer.writerows(rows)
-    SaveContacts(contacts_list)
+    print("Contacts Exported Succesfully.")
     
           
-        

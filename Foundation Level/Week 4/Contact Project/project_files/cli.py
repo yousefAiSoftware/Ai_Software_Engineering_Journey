@@ -87,21 +87,29 @@ def Options(contacts_list):
     print("1. Export Contacts")
     print("2. Go menu")
     print("3. Delete Contact")
-    print("4. Mark Contact as favourite")
-    print("5. Exit App")
+    print("4. Edit Contact")
+    print("5. Mark Contact as favourite")
+    print("6. Exit App")
 
     user_options_input = input("Enter the choice : ").strip()
     if user_options_input == "1":
         storage.ExportContacts(contacts_list)
+        storage.SaveContacts(contacts_list)
     elif user_options_input == "2":
         Menu()
     elif user_options_input == "3":
         DeleteContact(contacts_list)
+        ViewContacts(contacts_list)
+        storage.SaveContacts(contacts_list)
     elif user_options_input == "4":
-        MarkAsFAV(contacts_list)
+        EditContact(contacts_list)
         ViewContacts(contacts_list)
         storage.SaveContacts(contacts_list)
     elif user_options_input == "5":
+        MarkAsFAV(contacts_list)
+        ViewContacts(contacts_list)
+        storage.SaveContacts(contacts_list)
+    elif user_options_input == "6":
         Exit(contacts_list)
     else:
         print("Invalid Value!")
@@ -114,7 +122,23 @@ def DeleteContact(contacts_list):
     else:
         contacts_list.remove(user_name_delete)
         print(f"The contact '{user_input}' has been deleted")
-    storage.SaveContacts(contacts_list)
+
+def EditContact(contacts_list):
+    user_edit_input = int(input(f"Enter the choice (1 - {len(contacts_list)}) : ")) - 1
+    if user_edit_input >= 0 and user_edit_input < len(contacts_list):
+        user_edit_contact = contacts_list[user_edit_input]
+        ask = (input(f"what you want to edit in '{user_edit_contact["name"]}' (name / phone) : ").strip()).lower()
+        if ask == "name":
+            user_contact_toEdit = input(f"Enter New Name for '{user_edit_contact["name"]}' : ").strip()
+            user_edit_contact["name"] = user_contact_toEdit
+
+        elif ask == "phone":
+            user_contact_toEdit = input(f"Enter New Phone Number for '{user_edit_contact["name"]}' : ").strip()
+            user_edit_contact["phone"] = user_contact_toEdit
+
+        else:
+            print("Inavlid Value !")
+                
 
 
 def MarkAsFAV(contacts_list):
@@ -127,7 +151,11 @@ def MarkAsFAV(contacts_list):
         print("Invalid Value !!")
     
 
-
 def Exit(contacts_list):
     storage.SaveContacts(contacts_list)
     print("Thanks for time")
+
+
+
+
+
