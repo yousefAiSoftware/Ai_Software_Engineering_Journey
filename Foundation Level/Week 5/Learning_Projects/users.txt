@@ -1,0 +1,4 @@
+test@example.com,password123
+user@domain.com,weakpass
+no-email,strongpassword9
+another@test.net,short7
